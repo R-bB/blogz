@@ -1,0 +1,97 @@
+html {
+    display: flex;
+    flex-flow: row nowrap;  
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height:100%;
+    margin: 0;
+    padding: 0;
+    background:#eeeeee;
+}
+
+body {
+    padding: 10px 10px;
+    flex: 0 1 auto;
+    align-self: auto;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    height: 100%;
+    max-height: 600px;
+    background:#cfcfcf;
+    -webkit-box-shadow: 0px 0px 96px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 96px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 96px 0px rgba(0,0,0,0.75);
+}
+
+main {
+    display: flex;
+    flex: 0 1 auto;
+    align-self: auto;
+    align-content: center;
+    align-items: center;
+}  
+  
+nav a {
+    background-color: rgb(144, 208, 238);
+    border-radius:5px;
+    border:none;
+    color: darkgreen;
+    cursor: pointer;
+    display: block;
+    align-content: center;
+    font-size: 100%;
+    margin-bottom: 1rem;
+    padding: .5rem;
+}
+nav a:hover {
+    background:rgb(37, 74, 87);
+    box-shadow: 0px 2px 2px #777;
+    left: -2px;
+    position: relative;
+    top: -2px;
+}
+
+
+.container {
+    margin-left: 3rem;
+}
+
+input {
+    display: block;
+    font-size: 100%;
+    margin: 1rem;
+}
+
+textarea {
+    display: block;
+    font-size: 100%;
+    margin: 1rem;
+}
+
+#submit_button {
+    background-color: rgb(144, 208, 238);
+    border-radius:2px;
+    border:none;
+    color: darkgreen;
+    cursor: pointer;
+    padding: .5em;
+}
+
+#submit_button:hover {
+    background:lightblue;
+    box-shadow: 0px 5px 5px #777;
+    left: -2px;
+    position: relative;
+    top: -2px;
+}
+
+.flash_message {
+    background-color: rgb(252, 223, 220);
+    border-radius: 2px;
+    color: rgb(247, 4, 4);
+    margin: .25rem;
+    padding: 2rem;
+}

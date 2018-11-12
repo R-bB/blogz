@@ -1,30 +1,39 @@
 <!doctype html>
 <html>
     <head>
-        <title>{{title}}</title>
+        <title>{{page_title}}</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     </head>
-<body>
-    <main>
-        <nav>
-            <a href='/blog'>List Posts<br />by Oldest First</a>
-            <a href='/blog?sort=newest'>List Posts<br />By Newist First</a>
-            <a href='/new_post'>Create new post</a>
-        </nav>
-
-        <div class="container">
-            <!-- No message categories  -->
-            {% with messages = get_flashed_messages() %}
-                {% for message in messages %}
-                    <div class="flash_message">{{message|safe}}</div>
+    <body>
+        <main>
+            
+            <nav>
+                <a href="/">Home</a>
+                <a href="/blog">All Posts</a>
+                <a href="/login">New Post</a>
+            </nav>
+            <div class="container">
+                {% if 'username' in session %}
+                {{ session['username'].capitalize() }}
+                <form action="/logout" method="post" id='logout'>
+                    <input type="submit" value="Log Out" />
+                </form>
+                {% else %}
+                <a href="login">login</a> | <a href="signup">signup</a>
+                {% endif %}
+            </div>
+        </main>
+            {% with messages = get_flashed_messages(with_categories=True) %}
+                <ul>
+                {% for category,message in messages %}
+                    <li class="{{category}}">{{message}}</li>
                 {% endfor %}
+                </ul>    
             {% endwith %}
 
             {% block content %}
+
             {% endblock %}
-
-        </div>
-    </main>
-
-</body>
+        
+    </body>
 </html>

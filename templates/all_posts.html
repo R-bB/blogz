@@ -3,14 +3,10 @@
 {% block content %}
     <h1>All Blog Posts</h1>
     <ul>
-        {% for post in all_posts %}
-            <li>
-                <h2>
-                    <a href="/blog?id={{ post.id }}">{{ post.title }}</a>
-                </h2>
-                <p>{{ post.body }}</p>
-                <p>{{ post.created }}</p>
-            </li>
+        {% for idx in range(posts|length) %}
+            <h4><a href="/blog?id={{posts[idx].id}}">{{posts[idx].title}}</a></h4>
+            <p>{{posts[idx].body}}</p>
+            <p>Written by <a href="/blog?user={{posts[idx].owner.id}}">{{posts[idx].owner.username}}</a></p>
         {% endfor %}
     </ul>
 {% endblock %}
